@@ -48,15 +48,22 @@
             <a href="https://www.petermac.org/research">Research</a>
             <a href="https://www.petermac.org/education">Education</a>
             <a href="https://www.petermac.org/careers">Careers</a>
-            <a href="https://www.petermac.org/about-us">About us</a>
+            <div class="nav-item has-submenu">
+              <a href="https://www.petermac.org/about-us">About us</a>
+              <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="about-submenu-home" aria-label="Show About us menu"><span aria-hidden="true">⌄</span></button>
+              <div id="about-submenu-home" class="submenu" hidden>
+                <a href="https://www.petermac.org/about-us">About Peter Mac</a>
+                <a href="https://www.petermac.org/about-us/news-and-events/news">News</a>
+                <a href="https://www.petermac.org/about-us/news-and-events/events">Events</a>
+                <a href="https://www.petermac.org/contact-us">Contact us</a>
+              </div>
+            </div>
             <a class="nav-local" href="about-us/locations/melbourne-campus/">Locations</a>
           </nav>
         </div>
       </div>
     </div>
-  </header>
-
-  <aside class="accessibility-bar" aria-label="Accessibility controls">
+    <aside class="accessibility-bar" aria-label="Accessibility controls">
     <div class="container accessibility-inner">
       <span class="accessibility-label">Accessibility</span>
       <button type="button" data-accessibility="text-size" aria-label="Change text size. Current size: Default">
@@ -69,7 +76,8 @@
         <span aria-hidden="true">◖))</span><span data-read-label>Read aloud</span>
       </button>
     </div>
-  </aside>
+    </aside>
+  </header>
 
   <main id="main-content">
     <section class="home-hero" aria-labelledby="home-heading">
@@ -189,7 +197,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>Educational prototype only. Peter MacCallum Cancer Centre is not affiliated with this student project.</p>
+      <p>University design prototype — not an official Peter MacCallum Cancer Centre website.</p>
       <p>Reference content © Peter MacCallum Cancer Centre.</p>
     </div>
   </footer>

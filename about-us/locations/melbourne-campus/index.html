@@ -48,15 +48,22 @@
             <a href="https://www.petermac.org/research">Research</a>
             <a href="https://www.petermac.org/education">Education</a>
             <a href="https://www.petermac.org/careers">Careers</a>
-            <a href="https://www.petermac.org/about-us">About us</a>
+            <div class="nav-item has-submenu">
+              <a href="https://www.petermac.org/about-us">About us</a>
+              <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="about-submenu-campus" aria-label="Show About us menu"><span aria-hidden="true">⌄</span></button>
+              <div id="about-submenu-campus" class="submenu" hidden>
+                <a href="https://www.petermac.org/about-us">About Peter Mac</a>
+                <a href="https://www.petermac.org/about-us/news-and-events/news">News</a>
+                <a href="https://www.petermac.org/about-us/news-and-events/events">Events</a>
+                <a href="https://www.petermac.org/contact-us">Contact us</a>
+              </div>
+            </div>
             <a class="nav-local" href="./" aria-current="page">Locations</a>
           </nav>
         </div>
       </div>
     </div>
-  </header>
-
-  <aside class="accessibility-bar" aria-label="Accessibility controls">
+    <aside class="accessibility-bar" aria-label="Accessibility controls">
     <div class="container accessibility-inner">
       <span class="accessibility-label">Accessibility</span>
       <button type="button" data-accessibility="text-size" aria-label="Change text size. Current size: Default">
@@ -65,7 +72,8 @@
       <button type="button" data-accessibility="contrast" aria-pressed="false"><span aria-hidden="true">◐</span><span>High contrast</span></button>
       <button type="button" data-accessibility="read-aloud" aria-pressed="false"><span aria-hidden="true">◖))</span><span data-read-label>Read aloud</span></button>
     </div>
-  </aside>
+    </aside>
+  </header>
 
   <main id="main-content">
     <section class="inner-hero" aria-labelledby="campus-heading">
@@ -87,18 +95,13 @@
 
     <div class="container campus-layout">
       <article class="campus-content">
-        <section class="arrival-priority" aria-labelledby="arrival-heading">
-          <p class="eyebrow">Plan your arrival</p>
-          <h2 id="arrival-heading">Picking up or dropping off?</h2>
-          <div class="free-callout">
-            <div><span>First</span><strong>30</strong><span>minutes</span></div>
-            <p><strong>FREE</strong> for pickup and drop-off on car park levels <strong>B3 and B4</strong>.</p>
-          </div>
-          <p>Enter the Peter Mac car park from Flemington Road. The free period applies to pickup and drop-off on B3 and B4.</p>
-          <div class="arrival-actions">
-            <a class="button button-solid" href="#parking">See parking details</a>
-            <a class="button button-outline-dark" href="#before-you-arrive">Before you arrive</a>
-          </div>
+        <section class="content-section map-section" aria-labelledby="map-heading">
+          <h2 id="map-heading">Find the Melbourne campus</h2>
+          <p>Peter Mac Melbourne is located at 305 Grattan Street on Wurundjeri Woi-Wurrung Country.</p>
+          <a class="map-link" href="https://goo.gl/maps/X3hcAnp9Hv1oyU51A" aria-label="Open Peter Mac Melbourne campus in Google Maps">
+            <img src="../../../assets/images/melbourne-map.png" alt="Map showing Peter Mac Melbourne near Grattan Street and Flemington Road">
+            <span>Open interactive map <span aria-hidden="true">↗</span></span>
+          </a>
         </section>
 
         <section id="before-you-arrive" class="content-section" aria-labelledby="before-heading">
@@ -109,26 +112,19 @@
               <h3>Check your route</h3>
               <p>The Melbourne campus is at <strong>305 Grattan Street, Melbourne</strong>. The car park entrance is off Flemington Road.</p>
             </div>
-            <div class="info-card placeholder-card">
+            <!-- [PLACEHOLDER: Accessible parking information] -->
+            <div class="info-card placeholder-card" data-placeholder="accessible-parking-information">
               <span class="status-label">Prototype content placeholder</span>
               <h3>Accessible parking</h3>
               <p>Confirmed accessible bay locations, permit requirements and the assisted-arrival contact pathway will be inserted here when supplied by the project team.</p>
             </div>
-            <div class="info-card placeholder-card">
+            <!-- [PLACEHOLDER: Improved pre-arrival parking introduction] -->
+            <div class="info-card placeholder-card" data-placeholder="pre-arrival-parking-introduction">
               <span class="status-label">Prototype content placeholder</span>
               <h3>Allow extra time</h3>
               <p>Approved pre-arrival advice about peak parking demand and alternative arrival options will be inserted here.</p>
             </div>
           </div>
-        </section>
-
-        <section class="content-section map-section" aria-labelledby="map-heading">
-          <h2 id="map-heading">Find the Melbourne campus</h2>
-          <p>Peter Mac Melbourne is located at 305 Grattan Street on Wurundjeri Woi-Wurrung Country.</p>
-          <a class="map-link" href="https://goo.gl/maps/X3hcAnp9Hv1oyU51A" aria-label="Open Peter Mac Melbourne campus in Google Maps">
-            <img src="../../../assets/images/melbourne-map.png" alt="Map showing Peter Mac Melbourne near Grattan Street and Flemington Road">
-            <span>Open interactive map <span aria-hidden="true">↗</span></span>
-          </a>
         </section>
 
         <section class="content-section" aria-labelledby="transport-heading">
@@ -151,6 +147,19 @@
 
         <section class="content-section dropoff-section" aria-labelledby="dropoff-heading">
           <h2 id="dropoff-heading">Getting dropped off</h2>
+          <div class="arrival-priority" aria-labelledby="arrival-heading">
+            <p class="eyebrow">Peter Mac car park drop-off</p>
+            <h3 id="arrival-heading">Picking up or dropping off?</h3>
+            <div class="free-callout">
+              <div><span>First</span><strong>30</strong><span>minutes</span></div>
+              <p><strong>FREE</strong> for pickup and drop-off on car park levels <strong>B3 and B4</strong>.</p>
+            </div>
+            <p>Enter the Peter Mac car park from Flemington Road. The free period applies to pickup and drop-off on B3 and B4.</p>
+            <div class="arrival-actions">
+              <a class="button button-solid" href="#parking">See parking details</a>
+              <a class="button button-outline-dark" href="#before-you-arrive">Before you arrive</a>
+            </div>
+          </div>
           <div class="detail-block">
             <h3>Peter Mac car park drop-off</h3>
             <p>Access from Flemington Road is free for the first 30 minutes on levels B3 and B4 for pickup and drop-off.</p>
@@ -191,7 +200,11 @@
           </details>
         </section>
 
-        <section class="content-section signage-section" aria-labelledby="signage-heading">
+        <!-- [PLACEHOLDER: Updated arrival map and parking signage assets]
+             Replace the panels below with project files such as:
+             assets/images/arrival-map-placeholder.png
+             assets/images/parking-signage-placeholder.png -->
+        <section class="content-section signage-section" aria-labelledby="signage-heading" data-placeholder="map-and-signage-assets">
           <span class="status-label">Prototype asset placeholders</span>
           <h2 id="signage-heading">Arrival wayfinding and parking signs</h2>
           <p>The project’s final signage designs and parking map have not been supplied in this repository. These panels reserve their intended positions without inventing replacements.</p>
@@ -202,7 +215,8 @@
           </div>
         </section>
 
-        <section class="content-section communication-section" aria-labelledby="communication-heading">
+        <!-- [PLACEHOLDER: Approved SMS and admissions-letter parking messages] -->
+        <section class="content-section communication-section" aria-labelledby="communication-heading" data-placeholder="pre-arrival-communications">
           <span class="status-label">Concept copy — approval required</span>
           <h2 id="communication-heading">Pre-arrival communication</h2>
           <p>These examples show where concise parking and drop-off guidance could appear. They are not operational messages.</p>
@@ -268,7 +282,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>Educational prototype only. Peter MacCallum Cancer Centre is not affiliated with this student project.</p>
+      <p>University design prototype — not an official Peter MacCallum Cancer Centre website.</p>
       <p>Reference content © Peter MacCallum Cancer Centre.</p>
     </div>
   </footer>

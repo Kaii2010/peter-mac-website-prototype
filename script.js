@@ -8,6 +8,7 @@
   const readButton = document.querySelector('[data-accessibility="read-aloud"]');
   const menuButton = document.querySelector(".menu-toggle");
   const primaryNav = document.querySelector(".primary-nav");
+  const submenuButtons = Array.from(document.querySelectorAll(".submenu-toggle"));
   const storage = {
     get(key) {
       try { return window.localStorage.getItem(key); } catch (_) { return null; }
@@ -99,10 +100,38 @@
     }
   }
 
+  function closeSubmenus(exceptButton) {
+    submenuButtons.forEach((button) => {
+      if (button === exceptButton) return;
+      const menu = document.getElementById(button.getAttribute("aria-controls"));
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", "Show About us menu");
+      if (menu) menu.hidden = true;
+    });
+  }
+
+  submenuButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const menu = document.getElementById(button.getAttribute("aria-controls"));
+      if (!menu) return;
+      const opening = menu.hidden;
+      closeSubmenus(opening ? button : null);
+      menu.hidden = !opening;
+      button.setAttribute("aria-expanded", String(opening));
+      button.setAttribute("aria-label", `${opening ? "Hide" : "Show"} About us menu`);
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".nav-item")) closeSubmenus();
+  });
+
   if (menuButton && primaryNav) {
     function closeMenu() {
       primaryNav.classList.remove("is-open");
       menuButton.setAttribute("aria-expanded", "false");
+      closeSubmenus();
     }
     menuButton.addEventListener("click", () => {
       const opening = !primaryNav.classList.contains("is-open");
@@ -110,10 +139,16 @@
       menuButton.setAttribute("aria-expanded", String(opening));
     });
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && primaryNav.classList.contains("is-open")) {
-        closeMenu();
-        menuButton.focus();
+      if (event.key !== "Escape") return;
+      const openSubmenuButton = submenuButtons.find((button) => button.getAttribute("aria-expanded") === "true");
+      if (openSubmenuButton) {
+        closeSubmenus();
+        openSubmenuButton.focus();
+        return;
       }
+      if (!primaryNav.classList.contains("is-open")) return;
+      closeMenu();
+      menuButton.focus();
     });
     window.matchMedia("(min-width: 861px)").addEventListener("change", (event) => { if (event.matches) closeMenu(); });
   }
