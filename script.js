@@ -29,11 +29,10 @@
 
   function applyTextSize(size, shouldAnnounce) {
     const validSize = textSizes.includes(size) ? size : "default";
-    body.classList.toggle("text-large", validSize === "large");
-    body.classList.toggle("text-largest", validSize === "largest");
+    document.documentElement.dataset.textSize = validSize;
     if (textSizeButton) {
       const label = textSizeButton.querySelector("[data-text-size-label]");
-      if (label) label.textContent = `Text size: ${textLabels[validSize]}`;
+      if (label) label.textContent = `Text: ${textLabels[validSize]}`;
       textSizeButton.setAttribute("aria-label", `Change text size. Current size: ${textLabels[validSize]}`);
     }
     storage.set("pm-prototype-text-size", validSize);
@@ -69,7 +68,7 @@
     if (readButton) {
       readButton.setAttribute("aria-pressed", "false");
       const label = readButton.querySelector("[data-read-label]");
-      if (label) label.textContent = "Read aloud";
+      if (label) label.textContent = "Listen";
     }
     if (shouldAnnounce) announce("Read aloud stopped.");
   }
@@ -93,7 +92,7 @@
         body.classList.add("reading-active");
         readButton.setAttribute("aria-pressed", "true");
         const label = readButton.querySelector("[data-read-label]");
-        if (label) label.textContent = "Stop reading";
+        if (label) label.textContent = "Stop";
         announce("Read aloud started.");
         window.speechSynthesis.speak(utterance);
       });

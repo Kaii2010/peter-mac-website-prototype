@@ -19,6 +19,7 @@ for (const file of files) await access(new URL(file, root), constants.R_OK);
 const home = await readFile(new URL("index.html", root), "utf8");
 const campus = await readFile(new URL("about-us/locations/melbourne-campus/index.html", root), "utf8");
 const script = await readFile(new URL("script.js", root), "utf8");
+const styles = await readFile(new URL("styles.css", root), "utf8");
 
 for (const [name, html] of [["Home", home], ["Campus", campus]]) {
   assert.match(html, /<meta name="robots" content="noindex, nofollow, noarchive">/, `${name} must be noindex/nofollow`);
@@ -33,7 +34,8 @@ for (const [name, html] of [["Home", home], ["Campus", campus]]) {
 
 assert.match(home, />Locations<\/a>/, "Locations must be top-level navigation");
 assert.match(home, /href="about-us\/locations\/melbourne-campus\//, "Home must link to the local Melbourne Campus page");
-assert.match(campus, /class="nav-local" href="\.\/"/, "Campus Locations navigation must remain local");
+assert.match(campus, /href="\.\/" aria-current="page">Locations<\/a>/, "Campus Locations navigation must remain local");
+assert.match(home, />Careers<\/a>[\s\S]*?>Locations<\/a>[\s\S]*?>About us<\/a>/, "Locations must appear between Careers and About us");
 const aboutMenu = home.match(/id="about-submenu-home"[\s\S]*?<\/div>/)?.[0] || "";
 assert.ok(aboutMenu, "Home must include an About us submenu");
 assert.doesNotMatch(aboutMenu, />Locations</, "Locations must be removed from the About us submenu");
@@ -44,6 +46,8 @@ const campusOrder = ["Find the Melbourne campus", "Getting to Peter Mac Melbourn
 assert.ok(campusOrder.every((index) => index >= 0), "Campus page must retain every core official section");
 assert.deepEqual(campusOrder, [...campusOrder].sort((a, b) => a - b), "Campus page must retain the official section order");
 assert.match(script, /localStorage/, "Accessibility preferences must use localStorage");
+assert.match(script, /document\.documentElement\.dataset\.textSize/, "Text-size control must update the root element");
+assert.match(styles, /html\[data-text-size="large"\]/, "Root text-size states must change the rem scale");
 assert.match(script, /speechSynthesis/, "Read-aloud control must use browser speech synthesis");
 
 console.log(`Validated ${files.length} required files and both prototype pages.`);

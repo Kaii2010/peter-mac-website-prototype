@@ -37,6 +37,19 @@
             <input id="site-search-campus" name="q" type="search" placeholder="Search">
             <button type="submit" aria-label="Submit search">⌕</button>
           </form>
+          <aside class="accessibility-bar" aria-label="Accessibility controls">
+            <div class="accessibility-inner">
+              <button type="button" data-accessibility="text-size" aria-label="Change text size. Current size: Default">
+                <span aria-hidden="true">A<span class="large-a">A</span></span><span data-text-size-label>Text: Default</span>
+              </button>
+              <button type="button" data-accessibility="contrast" aria-pressed="false" aria-label="Toggle high contrast">
+                <span aria-hidden="true">◐</span><span>Contrast</span>
+              </button>
+              <button type="button" data-accessibility="read-aloud" aria-pressed="false" aria-label="Read page aloud">
+                <span aria-hidden="true">◖))</span><span data-read-label>Listen</span>
+              </button>
+            </div>
+          </aside>
         </div>
         <div class="nav-row">
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
@@ -48,6 +61,7 @@
             <a href="https://www.petermac.org/research">Research</a>
             <a href="https://www.petermac.org/education">Education</a>
             <a href="https://www.petermac.org/careers">Careers</a>
+            <a href="./" aria-current="page">Locations</a>
             <div class="nav-item has-submenu">
               <a href="https://www.petermac.org/about-us">About us</a>
               <button class="submenu-toggle" type="button" aria-expanded="false" aria-controls="about-submenu-campus" aria-label="Show About us menu"><span aria-hidden="true">⌄</span></button>
@@ -58,21 +72,10 @@
                 <a href="https://www.petermac.org/contact-us">Contact us</a>
               </div>
             </div>
-            <a class="nav-local" href="./" aria-current="page">Locations</a>
           </nav>
         </div>
       </div>
     </div>
-    <aside class="accessibility-bar" aria-label="Accessibility controls">
-    <div class="container accessibility-inner">
-      <span class="accessibility-label">Accessibility</span>
-      <button type="button" data-accessibility="text-size" aria-label="Change text size. Current size: Default">
-        <span aria-hidden="true">A<span class="large-a">A</span></span><span data-text-size-label>Text size: Default</span>
-      </button>
-      <button type="button" data-accessibility="contrast" aria-pressed="false"><span aria-hidden="true">◐</span><span>High contrast</span></button>
-      <button type="button" data-accessibility="read-aloud" aria-pressed="false"><span aria-hidden="true">◖))</span><span data-read-label>Read aloud</span></button>
-    </div>
-    </aside>
   </header>
 
   <main id="main-content">
