@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Educational prototype based on the Peter MacCallum Cancer Centre website.">
+  <title>Home | Peter Mac prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="prototype-banner" role="note">
+    <strong>University prototype</strong><span>Not an official Peter Mac website. Do not use for medical or travel decisions.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-shell">
+      <a class="brand" href="./" aria-label="Peter Mac prototype home">
+        <img src="assets/images/peter-mac-logo.png" alt="Peter MacCallum Cancer Centre, Victoria Australia">
+      </a>
+      <div class="header-content">
+        <div class="utility-row">
+          <nav class="utility-nav" aria-label="Utility navigation">
+            <a href="https://www.petermac.org/expert-finder">Expert Finder</a>
+            <a href="https://www.petermac.org/contact-us">Contact Us</a>
+            <a href="https://www.petermac.org/about-us/news-and-events/news">News</a>
+            <a href="https://www.petermac.org/about-us/news-and-events/events">Events</a>
+            <a href="https://foundation.petermac.org/donate">Donate <span aria-hidden="true">↗</span></a>
+          </nav>
+          <form class="site-search" action="https://www.petermac.org/search" method="get" role="search">
+            <label class="sr-only" for="site-search-home">Search Peter Mac</label>
+            <input id="site-search-home" name="q" type="search" placeholder="Search">
+            <button type="submit" aria-label="Submit search">⌕</button>
+          </form>
+        </div>
+        <div class="nav-row">
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+            <span aria-hidden="true">☰</span><span>Menu</span>
+          </button>
+          <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation">
+            <a href="https://www.petermac.org/patients-and-carers">Patients and carers</a>
+            <a href="https://www.petermac.org/health-professionals">Health Professionals</a>
+            <a href="https://www.petermac.org/research">Research</a>
+            <a href="https://www.petermac.org/education">Education</a>
+            <a href="https://www.petermac.org/careers">Careers</a>
+            <a href="https://www.petermac.org/about-us">About us</a>
+            <a class="nav-local" href="about-us/locations/melbourne-campus/">Locations</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside class="accessibility-bar" aria-label="Accessibility controls">
+    <div class="container accessibility-inner">
+      <span class="accessibility-label">Accessibility</span>
+      <button type="button" data-accessibility="text-size" aria-label="Change text size. Current size: Default">
+        <span aria-hidden="true">A<span class="large-a">A</span></span><span data-text-size-label>Text size: Default</span>
+      </button>
+      <button type="button" data-accessibility="contrast" aria-pressed="false">
+        <span aria-hidden="true">◐</span><span>High contrast</span>
+      </button>
+      <button type="button" data-accessibility="read-aloud" aria-pressed="false">
+        <span aria-hidden="true">◖))</span><span data-read-label>Read aloud</span>
+      </button>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <section class="home-hero" aria-labelledby="home-heading">
+      <div class="home-hero-copy">
+        <h1 id="home-heading">We care for people affected by cancer</h1>
+        <p>A world leading cancer research, education and treatment centre</p>
+        <a class="button button-outline-light" href="https://www.petermac.org/about-us">Learn more about us <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="home-hero-image" role="img" aria-label="Two Peter Mac staff members talking in a clinical setting"></div>
+    </section>
+
+    <section class="audiences section-pad" aria-label="Peter Mac services">
+      <div class="container card-grid card-grid-three">
+        <a class="audience-card audience-card-one" href="https://www.petermac.org/patients-and-carers">
+          <span class="card-icon" aria-hidden="true">♡</span>
+          <h2>Patients and carers</h2>
+          <p>Patients, families and carers are at the centre of everything we do. Access information and support for your cancer journey.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="audience-card audience-card-two" href="https://www.petermac.org/health-professionals">
+          <span class="card-icon" aria-hidden="true">＋</span>
+          <h2>Health professionals</h2>
+          <p>Refer a patient, learn about treatments and services, and access resources for health professionals.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="audience-card audience-card-three" href="https://www.petermac.org/research">
+          <span class="card-icon" aria-hidden="true">⌬</span>
+          <h2>Research</h2>
+          <p>Discover how Peter Mac researchers are improving cancer treatment, care and outcomes.</p>
+          <span class="card-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section-pad news-section" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="section-heading-row">
+          <h2 id="news-heading">Latest news</h2>
+          <a class="text-link" href="https://www.petermac.org/about-us/news-and-events/news">View all news <span aria-hidden="true">→</span></a>
+        </div>
+        <a class="featured-news" href="https://www.petermac.org/about-us/news-and-events/news/details/new-hope-for-treating-prostate-cancer-spread-to-bone">
+          <div class="featured-news-image" role="img" aria-label="Cancer research imagery"></div>
+          <div class="featured-news-copy">
+            <span class="eyebrow">09 October 2026</span>
+            <h3>New hope for treating prostate cancer spread to bone</h3>
+            <p>Read the latest research news from Peter Mac.</p>
+            <span class="button button-solid">Read more <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="steps-section section-pad" aria-labelledby="steps-heading">
+      <div class="container">
+        <h2 id="steps-heading">First steps to navigating Peter Mac</h2>
+        <div class="quick-links-grid">
+          <a href="https://www.petermac.org/patients-and-carers/becoming-a-peter-mac-patient/getting-started">Getting started <span aria-hidden="true">→</span></a>
+          <a href="https://www.petermac.org/contact-us/important-contacts">Important contacts <span aria-hidden="true">→</span></a>
+          <a class="local-link" href="about-us/locations/melbourne-campus/">Melbourne campus <span aria-hidden="true">→</span></a>
+          <a href="https://www.petermac.org/patients-and-carers/information-and-resources/visitor-information">Visitor information <span aria-hidden="true">→</span></a>
+          <a href="https://www.petermac.org/patients-and-carers/becoming-a-peter-mac-patient/planning-your-care/telehealth">Accessing telehealth <span aria-hidden="true">→</span></a>
+          <a href="https://www.petermac.org/patients-and-carers/becoming-a-peter-mac-patient/planning-your-care/health-hub">Health Hub <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="care-section" aria-labelledby="care-heading">
+      <div class="care-image" role="img" aria-label="Welcoming interior at Peter Mac"></div>
+      <div class="care-copy">
+        <p class="eyebrow">Support and wellbeing</p>
+        <h2 id="care-heading">We offer care that goes beyond treatment</h2>
+        <div class="tab-list" role="tablist" aria-label="Support topics">
+          <button id="tab-wellbeing" role="tab" aria-selected="true" aria-controls="panel-wellbeing" tabindex="0">Wellbeing</button>
+          <button id="tab-support" role="tab" aria-selected="false" aria-controls="panel-support" tabindex="-1">Support</button>
+          <button id="tab-carers" role="tab" aria-selected="false" aria-controls="panel-carers" tabindex="-1">Carers</button>
+        </div>
+        <div id="panel-wellbeing" role="tabpanel" aria-labelledby="tab-wellbeing">
+          <p>Peter Mac’s wellbeing approach is based on the belief that the best cancer care treats the person and the disease.</p>
+        </div>
+        <div id="panel-support" role="tabpanel" aria-labelledby="tab-support" hidden>
+          <p>Practical, emotional and social support services are available for patients, families and carers.</p>
+        </div>
+        <div id="panel-carers" role="tabpanel" aria-labelledby="tab-carers" hidden>
+          <p>Information and support can help carers look after themselves while caring for someone with cancer.</p>
+        </div>
+        <a class="button button-outline-dark" href="https://www.petermac.org/patients-and-carers/support-and-wellbeing">Find out more <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/peter-mac-logo.png" alt="Peter MacCallum Cancer Centre">
+        <p class="footer-phone"><a href="tel:+61385595000">(03) 8559 5000</a></p>
+        <p><strong>In an emergency, call 000</strong></p>
+        <p>Peter Mac acknowledges the Traditional Owners of the land on which its sites are located throughout Victoria and pays respect to their Elders past and present.</p>
+      </div>
+      <div>
+        <h2>Help and support</h2>
+        <ul>
+          <li><a href="https://www.petermac.org/about-us/interpreter-services-and-languages/interpreter-service">Interpreter</a></li>
+          <li><a href="https://www.petermac.org/about-us/interpreter-services-and-languages/interpreter-service/auslan-support-for-hearing-impaired-patients">Auslan</a></li>
+          <li><a href="https://www.petermac.org/contact-us">Contact us</a></li>
+          <li><a href="https://www.petermac.org/">Official Peter Mac website</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Locations</h2>
+        <ul>
+          <li><a class="local-link" href="about-us/locations/melbourne-campus/">Melbourne</a></li>
+          <li><a href="https://www.petermac.org/about-us/locations/bendigo-campus">Bendigo</a></li>
+          <li><a href="https://www.petermac.org/about-us/locations/box-hill-campus">Box Hill</a></li>
+          <li><a href="https://www.petermac.org/about-us/locations/moorabbin-campus">Moorabbin</a></li>
+          <li><a href="https://www.petermac.org/about-us/locations/sunshine-campus">Sunshine</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>Educational prototype only. Peter MacCallum Cancer Centre is not affiliated with this student project.</p>
+      <p>Reference content © Peter MacCallum Cancer Centre.</p>
+    </div>
+  </footer>
+  <div class="sr-only" aria-live="polite" data-accessibility-status></div>
+</body>
+</html>
