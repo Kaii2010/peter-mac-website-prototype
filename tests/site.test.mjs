@@ -23,12 +23,13 @@ const styles = await readFile(new URL("styles.css", root), "utf8");
 
 for (const [name, html] of [["Home", home], ["Campus", campus]]) {
   assert.match(html, /<meta name="robots" content="noindex, nofollow, noarchive">/, `${name} must be noindex/nofollow`);
-  assert.match(html, /University prototype/, `${name} must show prototype disclaimer`);
+  assert.match(html, /Design Factory student prototype/, `${name} must show prototype disclaimer`);
+  assert.match(html, /Not an official Peter Mac website - The Outsiders/, `${name} must credit the student team`);
   assert.match(html, /data-accessibility="text-size"/, `${name} must include text-size control`);
   assert.match(html, /data-accessibility="contrast"/, `${name} must include contrast control`);
   assert.match(html, /data-accessibility="read-aloud"/, `${name} must include read-aloud control`);
   assert.match(html, /<header class="site-header">[\s\S]*class="accessibility-bar"[\s\S]*<\/header>/, `${name} accessibility controls must be inside the site header`);
-  assert.match(html, /University design prototype — not an official Peter MacCallum Cancer Centre website\./, `${name} must include the required footer disclaimer`);
+  assert.match(html, /Design Factory student prototype — not an official Peter Mac website — The Outsiders\./, `${name} must include the required footer disclaimer`);
   assert.doesNotMatch(html, /(?:api[_-]?key|token|password)\s*[:=]\s*["'][^"']+/i, `${name} must not contain obvious credentials`);
 }
 
@@ -36,6 +37,7 @@ assert.match(home, />Locations<\/a>/, "Locations must be top-level navigation");
 assert.match(home, /href="about-us\/locations\/melbourne-campus\//, "Home must link to the local Melbourne Campus page");
 assert.match(campus, /href="\.\/" aria-current="page">Locations<\/a>/, "Campus Locations navigation must remain local");
 assert.match(home, />Careers<\/a>[\s\S]*?>Locations<\/a>[\s\S]*?>About us<\/a>/, "Locations must appear between Careers and About us");
+assert.match(home, />Peter Mac Foundation [\s\S]*?<\/a>/, "Utility navigation must match the official Peter Mac header");
 const aboutMenu = home.match(/id="about-submenu-home"[\s\S]*?<\/div>/)?.[0] || "";
 assert.ok(aboutMenu, "Home must include an About us submenu");
 assert.doesNotMatch(aboutMenu, />Locations</, "Locations must be removed from the About us submenu");
