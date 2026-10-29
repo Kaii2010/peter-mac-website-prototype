@@ -8,6 +8,7 @@ The following images were downloaded from the public Peter Mac website on 15 Oct
 | `images/home-hero.jpg` | `https://www.petermac.org/images/Patients_clinicians_NUMs_doctors/DJ6-image_hero.jpg` |
 | `images/melbourne-campus.jpg` | `https://www.petermac.org/images/Peter%20Mac%20building%20and%20cafes/DJ3_6368_V2_BrAf_FS.jpg` |
 | `images/wellbeing.jpg` | `https://www.petermac.org/images/Peter%20Mac%20building%20and%20cafes/DJ3_7004_V2_BrAf_FS.jpg` |
+| `images/Precinct_map.jpeg` | `https://www.petermac.org/images/Precinct_map.jpeg` |
 
 The project team supplied `images/peter-mac-arrival-signage-plan.jpg` on 29 October 2026. It was optimized for the web from 8110 × 5735 pixels to 2400 × 1697 pixels without altering the design.
 
