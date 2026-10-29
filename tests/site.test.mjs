@@ -44,6 +44,8 @@ assert.ok(aboutMenu, "Home must include an About us submenu");
 assert.doesNotMatch(aboutMenu, />Locations</, "Locations must be removed from the About us submenu");
 assert.match(campus, /First[\s\S]*30[\s\S]*minutes[\s\S]*FREE/i, "Campus page must prominently state the free 30-minute period");
 assert.match(campus, /peter-mac-arrival-signage-plan\.jpg/, "Campus page must use the supplied arrival and signage plan");
+assert.match(campus, />Open full-size site map </, "Campus map action must use the requested site-map label");
+assert.doesNotMatch(campus, />Open full-size arrival and signage plan </, "Old campus map action label must be removed");
 assert.match(campus, /google\.com\/maps\/search\/\?api=1&amp;query=Peter\+MacCallum\+Cancer\+Centre/, "Campus page must link to Peter Mac in Google Maps");
 assert.match(campus, /Precinct_map\.jpeg/, "Public transport section must include the official Parkville precinct map");
 assert.doesNotMatch(campus, /Before you arrive|before-you-arrive|Prototype content placeholder/, "The Before you arrive section must be removed");
