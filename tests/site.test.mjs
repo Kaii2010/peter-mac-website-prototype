@@ -49,7 +49,7 @@ assert.match(campus, /Precinct_map\.jpeg/, "Public transport section must includ
 assert.doesNotMatch(campus, /Before you arrive|before-you-arrive|Prototype content placeholder/, "The Before you arrive section must be removed");
 assert.doesNotMatch(campus, /Prototype asset placeholders|Arrival wayfinding and parking signs|Pre-arrival communication|SMS concept|Admissions letter concept/, "Removed placeholder concept sections must not remain");
 assert.match(campus, /class="content-section dropoff-section"[\s\S]*class="arrival-priority"/, "The free 30-minute message must enhance the existing drop-off section");
-const campusOrder = ["Find the Melbourne campus", "Getting to Peter Mac Melbourne", "Getting dropped off", "Melbourne parking", "Wheelchair access"].map((heading) => campus.indexOf(`>${heading}<`));
+const campusOrder = ["Find the Melbourne campus", "Getting to Peter Mac Melbourne", "Getting dropped off", "Parking", "Wheelchair access"].map((heading) => campus.indexOf(`>${heading}<`));
 assert.ok(campusOrder.every((index) => index >= 0), "Campus page must retain every core official section");
 assert.deepEqual(campusOrder, [...campusOrder].sort((a, b) => a - b), "Campus page must retain the official section order");
 assert.match(script, /localStorage/, "Accessibility preferences must use localStorage");
