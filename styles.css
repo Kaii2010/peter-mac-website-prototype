@@ -159,6 +159,7 @@ html[data-text-size="largest"] .utility-nav a:nth-child(4) { display: none; }
 .arrival-priority .button-outline-dark { color: var(--white); border-color: var(--white); }
 
 .content-section { padding: 3.5rem 0; border-bottom: 1px solid #ded7e5; }
+.parking-section { border-bottom: 0; }
 .content-section h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
 .content-section p, .content-section li { font-size: 1.06rem; }
 .transport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
