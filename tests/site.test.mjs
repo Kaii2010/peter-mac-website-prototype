@@ -55,6 +55,8 @@ assert.deepEqual(campusOrder, [...campusOrder].sort((a, b) => a - b), "Campus pa
 assert.match(script, /localStorage/, "Accessibility preferences must use localStorage");
 assert.match(script, /document\.documentElement\.dataset\.textSize/, "Text-size control must update the root element");
 assert.match(styles, /html\[data-text-size="large"\]/, "Root text-size states must change the rem scale");
+assert.match(styles, /body\.high-contrast\s*\{[\s\S]*?background:\s*#080808/, "High contrast mode must use a dark page background");
+assert.match(styles, /body\.high-contrast \.audience-card[\s\S]*?background:\s*#111/, "High contrast mode must darken content cards");
 assert.match(script, /speechSynthesis/, "Read-aloud control must use browser speech synthesis");
 
 console.log(`Validated ${files.length} required files and both prototype pages.`);

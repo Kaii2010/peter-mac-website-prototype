@@ -23,8 +23,6 @@ html { scroll-behavior: smooth; font-size: var(--base-font-size); }
 html[data-text-size="large"] { --base-font-size: 112.5%; }
 html[data-text-size="largest"] { --base-font-size: 125%; }
 body { margin: 0; font-family: "Barlow", Arial, sans-serif; color: var(--ink); background: var(--white); line-height: 1.55; }
-body.high-contrast { --purple-950: #000; --purple-900: #000; --purple-800: #190035; --purple-700: #2b0057; --magenta: #79005b; --cream: #fff; --lavender: #fff; --ink: #000; --muted: #222; --gold: #ffdf00; }
-body.high-contrast a { text-decoration-thickness: 2px; }
 body.reading-active main { outline: 4px solid var(--focus); outline-offset: -4px; }
 
 img { display: block; max-width: 100%; }
@@ -208,6 +206,85 @@ summary { position: relative; padding: 1rem 2.5rem 1rem .2rem; color: var(--purp
 .footer-grid a { color: var(--white); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 2rem; padding-block: 1.2rem; border-top: 1px solid rgba(255,255,255,.25); font-size: .86rem; }
 .footer-bottom p { margin: 0; }
+
+/* Full-page dark high-contrast theme. Content maps and logos retain their original colors. */
+body.high-contrast {
+  --purple-950: #000;
+  --purple-900: #050505;
+  --purple-800: #111;
+  --purple-700: #242424;
+  --magenta: #ff5ec4;
+  --pink: #ff8bd4;
+  --gold: #ffe600;
+  --cream: #111;
+  --lavender: #1a1a1a;
+  --ink: #fff;
+  --muted: #e4e4e4;
+  --focus: #00e5ff;
+  color: #fff;
+  background: #080808;
+  color-scheme: dark;
+}
+body.high-contrast a { text-decoration-thickness: 2px; }
+body.high-contrast main,
+body.high-contrast .audiences,
+body.high-contrast .news-section,
+body.high-contrast .steps-section,
+body.high-contrast .care-section,
+body.high-contrast .breadcrumbs { color: #fff; background: #080808; }
+body.high-contrast .home-hero,
+body.high-contrast .inner-hero,
+body.high-contrast .arrival-priority { background: #000; }
+body.high-contrast .home-hero-image,
+body.high-contrast .featured-news-image,
+body.high-contrast .care-image,
+body.high-contrast .inner-hero-image { filter: brightness(.72) contrast(1.2); }
+body.high-contrast .audiences .card-grid,
+body.high-contrast .audience-card,
+body.high-contrast .featured-news,
+body.high-contrast .transport-grid section,
+body.high-contrast .parking-facts div,
+body.high-contrast .submenu,
+body.high-contrast .location-sidebar a,
+body.high-contrast .location-sidebar a[aria-current="page"] { color: #fff; background: #111; }
+body.high-contrast .quick-links-grid .local-link,
+body.high-contrast .precinct-map figcaption { color: #fff; background: #1a1a1a; }
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast .audience-card h2,
+body.high-contrast .featured-news h3,
+body.high-contrast .parking-facts strong { color: var(--gold); }
+body.high-contrast .arrival-priority h2,
+body.high-contrast .arrival-priority h3,
+body.high-contrast .footer-grid h2 { color: #fff; }
+body.high-contrast .eyebrow,
+body.high-contrast .card-icon,
+body.high-contrast .breadcrumbs li:not(:last-child)::after { color: var(--pink); }
+body.high-contrast .text-link,
+body.high-contrast .breadcrumbs a,
+body.high-contrast .quick-links-grid a,
+body.high-contrast .tab-list button,
+body.high-contrast summary,
+body.high-contrast .location-sidebar a,
+body.high-contrast .transport-grid a { color: var(--gold); }
+body.high-contrast .map-actions a { color: #fff; background: #111; }
+body.high-contrast .map-actions a:hover,
+body.high-contrast .map-actions a:focus-visible { color: #000; background: var(--gold); }
+body.high-contrast .important-note { color: #fff; background: #292500; }
+body.high-contrast .important-note h3 { color: var(--gold); }
+body.high-contrast .free-callout,
+body.high-contrast .free-callout p { color: #111; }
+body.high-contrast .content-section,
+body.high-contrast .quick-links-grid,
+body.high-contrast .quick-links-grid a,
+body.high-contrast .map-card,
+body.high-contrast .precinct-map,
+body.high-contrast details,
+body.high-contrast .location-sidebar,
+body.high-contrast .location-sidebar a { border-color: #8a8a8a; }
+body.high-contrast .accessibility-bar button { color: #fff; border-left-color: #8a8a8a; }
+body.high-contrast .accessibility-bar button:hover,
+body.high-contrast .accessibility-bar button[aria-pressed="true"] { color: #000; background: var(--gold); }
 
 @media (max-width: 1600px) and (min-width: 1081px) {
   .primary-nav > a, .nav-item > a { padding-inline: 18px; font-size: 18px; }
