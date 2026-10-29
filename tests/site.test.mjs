@@ -11,7 +11,7 @@ const files = [
   "assets/images/peter-mac-logo.png",
   "assets/images/home-hero.jpg",
   "assets/images/melbourne-campus.jpg",
-  "assets/images/melbourne-map.png"
+  "assets/images/peter-mac-arrival-signage-plan.jpg"
 ];
 
 for (const file of files) await access(new URL(file, root), constants.R_OK);
@@ -43,6 +43,9 @@ assert.ok(aboutMenu, "Home must include an About us submenu");
 assert.doesNotMatch(aboutMenu, />Locations</, "Locations must be removed from the About us submenu");
 assert.match(campus, /First[\s\S]*30[\s\S]*minutes[\s\S]*FREE/i, "Campus page must prominently state the free 30-minute period");
 assert.match(campus, /Prototype content placeholder/, "Unconfirmed campus content must remain explicitly marked");
+assert.match(campus, /peter-mac-arrival-signage-plan\.jpg/, "Campus page must use the supplied arrival and signage plan");
+assert.doesNotMatch(campus, /goo\.gl\/maps/, "The Google Maps image link must be replaced by the project map");
+assert.doesNotMatch(campus, /Prototype asset placeholders|Arrival wayfinding and parking signs|Pre-arrival communication|SMS concept|Admissions letter concept/, "Removed placeholder concept sections must not remain");
 assert.match(campus, /class="content-section dropoff-section"[\s\S]*class="arrival-priority"/, "The free 30-minute message must enhance the existing drop-off section");
 const campusOrder = ["Find the Melbourne campus", "Getting to Peter Mac Melbourne", "Getting dropped off", "Melbourne parking", "Wheelchair access"].map((heading) => campus.indexOf(`>${heading}<`));
 assert.ok(campusOrder.every((index) => index >= 0), "Campus page must retain every core official section");
